@@ -35,6 +35,7 @@ namespace MoodAnalyzer.MoodAnalyzer
             catch (NullReferenceException)
             {
                 return "happy";
+
             }
         }
     }
