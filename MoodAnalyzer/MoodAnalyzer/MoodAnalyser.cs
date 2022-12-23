@@ -18,8 +18,12 @@ namespace MoodAnalyzer.MoodAnalyzer
         {
             try
             {
+                if (message.Equals(string.Empty))
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_EXCEPTION, "Mood should not be empty");
+                }
 
-                if (message.Contains("happy"))
+                else if (message.ToLower().Contains("happy"))
                 {
                     return "happy";
                 }
@@ -31,7 +35,6 @@ namespace MoodAnalyzer.MoodAnalyzer
             catch (NullReferenceException)
             {
                 return "happy";
-
             }
         }
     }
