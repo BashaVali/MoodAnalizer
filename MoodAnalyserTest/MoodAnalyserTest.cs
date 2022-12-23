@@ -5,19 +5,19 @@ namespace MoodAnalyserTest
     [TestClass]
     public class MoodTest
     {
-        MoodAnalyser moodAnalyser;
-        string message = " I am in happy Mood";
+        //MoodAnalyser moodAnalyser;
+        //string message = " I am in happy Mood";
         [TestInitialize]
         public void SetUp()
         {
-            moodAnalyser = new MoodAnalyser(message);
+            //moodAnalyser = new MoodAnalyser(message);
         }
         [TestMethod]
         public void TestMethodForHappyMood()
 
         {
             string expected = "happy";
-
+            MoodAnalyser moodAnalyser = new MoodAnalyser("I am in happy Mood");
             string actual = moodAnalyser.AnalyzeMood();
             Assert.AreEqual(expected, actual);
         }
@@ -25,8 +25,7 @@ namespace MoodAnalyserTest
         public void TestMethodForSadMood()
 
         {
-            string message = " I am in Sad Mood";
-            MoodAnalyser moodAnalyser = new MoodAnalyser(message);
+            MoodAnalyser moodAnalyser = new MoodAnalyser("I am in sad Mood");
             string expected = "sad";
             string actual = moodAnalyser.AnalyzeMood();
             Assert.AreEqual(expected, actual);
